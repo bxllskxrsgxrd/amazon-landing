@@ -1,0 +1,24 @@
+.cta-button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+
+	box-sizing: border-box;
+	width: 200px;
+	height: 44px;
+	padding: 13px 30px;
+
+	background: $color-primary-light;
+	border-radius: 40px;
+
+	color: $color-white;
+	font-size: $font-size-md;
+	font-weight: $font-weight-bold;
+	line-height: 1;
+	text-align: center;
+	text-decoration: none;
+	white-space: nowrap;
+
+	cursor: pointer;
+}

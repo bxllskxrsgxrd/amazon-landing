@@ -1,0 +1,49 @@
+.app {
+	min-height: 100svh;
+	background: $color-white;
+
+	&__mobile {
+		width: 100%;
+		max-width: 425px;
+		min-height: 100svh;
+		margin: 0 auto;
+	}
+
+	&__desktop {
+		display: none;
+	}
+}
+
+// Desktop: от 769px
+@media (min-width: 769px) {
+	.app {
+		&__mobile {
+			display: none;
+		}
+
+		&__desktop {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			gap: 16px;
+
+			min-height: 100svh;
+			padding: 24px;
+
+			background: $color-background-dark;
+			color: $color-white;
+			text-align: center;
+		}
+
+		&__desktop-title {
+			font-size: 28px;
+			font-weight: 700;
+		}
+
+		&__desktop-description {
+			font-size: 16px;
+			color: $color-text-muted;
+		}
+	}
+}

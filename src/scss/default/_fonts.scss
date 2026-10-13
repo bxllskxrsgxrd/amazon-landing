@@ -1,0 +1,5 @@
+@use '../mixins/font-face' as *;
+
+@include font-face('TT Fors Trial', 'TT-Fors-Trial-Regular', 400, normal);
+@include font-face('TT Fors Trial', 'TT-Fors-Trial-Medium', 500, normal);
+@include font-face('TT Fors Trial', 'TT-Fors-Trial-Bold', 700, normal);

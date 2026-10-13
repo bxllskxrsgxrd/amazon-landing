@@ -1,11 +1,32 @@
 import react from '@vitejs/plugin-react';
 import { resolve } from 'node:path';
 import { defineConfig } from 'vite';
+import { fileURLToPath, URL } from 'node:url'
 
 // https://vite.dev/config/
 export default defineConfig({
 	plugins: [react()],
+
 	base: '/amazon-landing/',
+
+	resolve: {
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+    },
+  },
+
+	css: {
+		preprocessorOptions: {
+			scss: {
+				additionalData: `
+					@use "@/scss/mixins/breakpoint" as *;
+					@use "@/scss/mixins/mixin" as *;
+					@use "@/scss/abstracts/variables" as *;
+					
+				`,
+			},
+		},
+	},
 
 	build: {
 		rollupOptions: {
