@@ -138,4 +138,34 @@
 		font-size: 12px;
 		font-weight: 700;
 	}
+
+	@include above-mobile {
+		max-width: 440px;
+		margin-top: -64px;
+
+		&__icon {
+			width: 36px;
+			height: 36px;
+			font-size: 24px;
+		}
+
+		&__title {
+			font-size: 20px;
+		}
+
+		&__description {
+			font-size: 14px;
+		}
+
+		&__amount {
+			font-size: 22px;
+		}
+
+		&__social-text,
+		&__conditions,
+		&__urgency,
+		&__jackpot {
+			font-size: 14px;
+		}
+	}
 }

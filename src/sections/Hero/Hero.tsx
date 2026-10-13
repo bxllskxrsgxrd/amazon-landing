@@ -4,6 +4,10 @@ import { BonusCard } from '@/components/BonusCard/BonusCard';
 import { CTAButton } from '@/components/CTAButton/CTAButton';
 
 import heroImage from '@/assets/images/hero/hero.webp';
+import iosVector from '@/assets/svg/hero/ios.svg';
+import androidVector from '@/assets/svg/hero/android.svg';
+import separatorVector from '@/assets/svg/hero/separator.svg';
+
 
 import './_hero.scss';
 
@@ -49,7 +53,9 @@ export function Hero() {
         </div>
 
         <div className="hero__platforms">
-          {/* iOS и Android */}
+          <img src={iosVector} alt="iOS" />
+          <img src={separatorVector} alt="Separator" />
+          <img src={androidVector} alt="Android" />
         </div>
       </div>
     </section>

@@ -4,7 +4,6 @@
 
 	&__mobile {
 		width: 100%;
-		max-width: 425px;
 		min-height: 100svh;
 		margin: 0 auto;
 	}
@@ -12,11 +11,16 @@
 	&__desktop {
 		display: none;
 	}
-}
 
-// Desktop: от 769px
-@media (min-width: 769px) {
-	.app {
+	// Tablet: 577–768px
+	@media (min-width: 577px) and (max-width: 768px) {
+		&__mobile {
+			max-width: none;
+		}
+	}
+
+	// Desktop: от 769px
+	@media (min-width: 769px) {
 		&__mobile {
 			display: none;
 		}
