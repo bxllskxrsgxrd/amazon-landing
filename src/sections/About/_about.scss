@@ -1,0 +1,68 @@
+.about {
+	display: flow-root;
+	background: $color-white;
+
+	&__image-wrapper {
+		position: relative;
+		z-index: 1;
+		margin-top: -55px;
+
+		&::after {
+			position: absolute;
+			inset: 0 0 auto;
+			height: 58px;
+			background: linear-gradient(to bottom, #101010 0%, rgba(16, 16, 16, 0.82) 34%, transparent 100%);
+			content: '';
+			pointer-events: none;
+		}
+	}
+
+	&__image {
+		display: block;
+		width: 100%;
+		height: auto;
+		aspect-ratio: 2.5 / 1;
+		object-fit: cover;
+	}
+
+	&__content {
+		padding: 40px 30px;
+	}
+
+	&__heading {
+		font-size: 14px;
+		font-weight: 500;
+		color: $color-text-primary;
+	}
+
+	&__text {
+		font-size: 12px;
+		font-weight: 500;
+		line-height: 1.03;
+		letter-spacing: -0.18px;
+		color: $color-text-primary;
+
+		p:not(:last-child) {
+			margin-bottom: 12px;
+		}
+	}
+
+	&__list {
+		list-style: none;
+		margin-bottom: 12px;
+
+		li {
+			margin-bottom: 4px;
+		}
+	}
+
+	@include small-mobile {
+		&__content {
+			padding-inline: 24px;
+		}
+
+		&__text {
+			font-size: 11px;
+		}
+	}
+}

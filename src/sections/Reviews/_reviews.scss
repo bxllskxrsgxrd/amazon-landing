@@ -1,0 +1,62 @@
+.reviews {
+	padding: 0 16px 90px;
+	background: $color-white;
+	color: $color-text-primary;
+
+	&__header {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: 10px;
+	}
+
+	&__title {
+		margin-top: 2px;
+		font-size: 13px;
+		font-weight: $font-weight-bold;
+		line-height: 1;
+		text-transform: uppercase;
+	}
+
+	&__rating {
+		flex: 0 0 auto;
+		text-align: left;
+	}
+
+	&__score {
+		display: flex;
+		align-items: center;
+		gap: 5px;
+		font-size: 10px;
+		font-weight: $font-weight-bold;
+		line-height: 1;
+		color: $color-primary-light;
+	}
+
+	&__stars {
+		letter-spacing: -1px;
+	}
+
+	&__count {
+		margin-top: 4px;
+		font-size: 7px;
+		line-height: 1;
+		color: $color-text-muted;
+	}
+
+	&__grid {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		column-gap: 8px;
+		row-gap: 16px;
+		margin-top: 20px;
+	}
+
+	@include small-mobile {
+		padding-inline: 14px;
+
+		&__grid {
+			column-gap: 7px;
+		}
+	}
+}

@@ -1,5 +1,7 @@
 import { Hero } from '@/sections/Hero/Hero';
-// import { About } from '@/sections/About/About';
+import { Benefits } from '@/sections/Benefits/Benefits';
+import { About } from '@/sections/About/About';
+import { Reviews } from '@/sections/Reviews/Reviews';
 
 import './_app.scss';
 
@@ -8,7 +10,9 @@ function App() {
 		<main className="app">
 			<div className="app__mobile">
 				<Hero />
-				{/* <About /> */}
+				<Benefits />
+				<About />
+				<Reviews />
 			</div>
 
 			<section className="app__desktop">
