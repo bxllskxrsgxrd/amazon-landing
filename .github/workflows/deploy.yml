@@ -1,8 +1,10 @@
+
 name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
@@ -19,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Setup Bun
@@ -30,13 +32,21 @@ jobs:
       - name: Install dependencies
         run: bun ci
 
-      - name: Build
+      - name: Build project
         run: bun run build
 
-      - name: Setup Pages
+      - name: Verify build
+        run: |
+          test -f dist/index.html
+          if grep -q '/src/main.tsx' dist/index.html; then
+            echo "Error: Uncompiled TSX entry in dist/index.html"
+            exit 1
+          fi
+
+      - name: Setup GitHub Pages
         uses: actions/configure-pages@v5
 
-      - name: Upload artifact
+      - name: Upload build artifact
         uses: actions/upload-pages-artifact@v4
         with:
           path: ./dist
